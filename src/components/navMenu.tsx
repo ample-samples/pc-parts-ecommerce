@@ -25,7 +25,7 @@ export function NavMenu() {
   return (
     <>
       <div className="w-full p-2 flex flex-col-4 space-between">
-        <Menubar className="mx-4 py-5">
+        <Menubar className="mx-4 py-6 pl-2">
           {theme === 'light' ?
             <Image src={pcPartsLogoLight} alt="PC Parts Logo" width={150} />
             :
@@ -166,17 +166,17 @@ export function NavMenu() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Diplay</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[450px] p-2 flex flex-col flex-wrap gap-2">
-                    <Card className="p-2">
+                  <div className="h-80 w-[450px] p-2 flex flex-col flex-wrap gap-2">
+                    <Card className="p-2 flex-1">
                       <p className="font-bold text-xl">By size</p>
                       <br />
-                      <NavigationMenuLink>19-24"</NavigationMenuLink>
+                      <NavigationMenuLink>19-24&quot;</NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>25-31"</NavigationMenuLink>
+                      <NavigationMenuLink>25-31&quot;</NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>32"+</NavigationMenuLink>
+                      <NavigationMenuLink>32&quot;+</NavigationMenuLink>
                     </Card>
-                    <Card className="p-2">
+                    <Card className="p-2 flex-1">
                       <p className="font-bold text-xl">By panel</p>
                       <br />
                       <NavigationMenuLink> TN </NavigationMenuLink>
@@ -185,7 +185,7 @@ export function NavMenu() {
                       <br />
                       <NavigationMenuLink> IPS </NavigationMenuLink>
                     </Card>
-                    <Card className="p-2">
+                    <Card className="p-2 flex-1">
                       <p className="font-bold text-xl">By aspect ratio</p>
                       <br />
                       <NavigationMenuLink> 16:9 </NavigationMenuLink>
@@ -204,7 +204,7 @@ export function NavMenu() {
                 <NavigationMenuContent>
                   <div className="w-[450px] p-2 flex flex-col flex-wrap gap-2">
                       <Image
-                        className="mb-2 rounded-sm"
+                        className="mb-2 px-2 rounded-sm"
                         src={gamerJuiceLogo}
                         alt="PC Parts Logo"
                         width={900}

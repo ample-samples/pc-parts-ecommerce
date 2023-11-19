@@ -9,7 +9,7 @@ export default function HeroCard() {
         <p className="text-2xl font-bold text-center w-80 self-center">
           Fulfill your <span className="text-2xl font-bold bg-gradient-to-r from-orange-700 via-teal-500 to-purple-400 text-transparent bg-clip-text bg-300% animate-gradient">
             RGB
-          </span> craze with our our new desktops from <br /> <span className='text-[#5E4399] text-4xl'>NZXT</span></p>
+          </span> craze with our our 2023 desktops from <br /> <span className='text-[#5E4399] text-4xl'>NZXT</span></p>
       </div>
       <Image
         src={hubPc}
