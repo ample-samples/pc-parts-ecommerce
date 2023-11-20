@@ -13,7 +13,8 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
-import { FaMagnifyingGlass } from "react-icons/fa6";
+import { BsCart4 } from "react-icons/bs";
+
 import { useState } from 'react'
 
 export function NavMenu() {
@@ -29,8 +30,9 @@ export function NavMenu() {
   };
 
   return (
-    <div className="w-full p-2 flex flex-col-4 gap-4 space-between items-center">
-      <Menubar className="ml-4 mr-6 py-6 pl-2">
+    <div className="w-full py-2 px-2 flex flex-col-4 gap-4 space-between items-center">
+
+      <Menubar className="ml-2 mr-2 py-6 pl-2">
         {theme === 'light' ?
           <Image src={pcPartsLogoLight} alt="PC Parts Logo" width={150} />
           :
@@ -80,6 +82,7 @@ export function NavMenu() {
                     <NavigationMenuLink> Intel Motherboards </NavigationMenuLink>
                     <br />
                   </Card>
+
                   <Card className="p-2 flex-1">
                     <NavigationMenuLink>
                       <p className="text-bold text-xl"> Processors </p>
@@ -138,6 +141,7 @@ export function NavMenu() {
                     <br />
                     <NavigationMenuLink>32&quot;+</NavigationMenuLink>
                   </Card>
+
                   <Card className="p-2 flex-1">
                     <p className="font-bold text-xl">By panel</p>
                     <br />
@@ -147,6 +151,7 @@ export function NavMenu() {
                     <br />
                     <NavigationMenuLink> IPS </NavigationMenuLink>
                   </Card>
+
                   <Card className="p-2 flex-1">
                     <p className="font-bold text-xl">By aspect ratio</p>
                     <br />
@@ -168,14 +173,14 @@ export function NavMenu() {
                   <Image
                     className="mb-2 px-2 rounded-sm"
                     src={gamerJuiceLogo}
-                    alt="PC Parts Logo"
+                    alt="Gamer juice logo"
                     width={900}
                   />
                   <Card className="p-2">
                     <Image
                       className="mb-2 rounded-sm"
                       src={energyDrinks}
-                      alt="PC Parts Logo"
+                      alt="Energy Drinks"
                       width={900}
                     />
                     <div className="grid grid-cols-3">
@@ -192,18 +197,8 @@ export function NavMenu() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <MenubarMenu>
-          <MenubarTrigger>Options</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem onClick={toggleTheme}> Light / Dark</MenubarItem>
-            <MenubarItem>New Window</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>Share</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>Print</MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
       </Menubar>
+
       <div className="grow text-center place-self-center relative" >
         <CustomInput className="w-full" onSubmit={(e) => console.log(e.target, "awdhjk")} onChange={(e) => {
           console.log(e.target.value)
@@ -214,25 +209,28 @@ export function NavMenu() {
               <PopoverTrigger>
               </PopoverTrigger>
               <PopoverContent className="w-[702px] max-h-[200px] overflow-hidden" onOpenAutoFocus={(e) => e.preventDefault()}>
-                Place content for the popover here.
-                Place content for the popover here.
-                Place content for the popover here.
-                Place content for the popover here.
-                Place content for the popover here.
-                Place content for the popover here.
-                Place content for the popover here.
-                Place content for the popover here.
-                Place content for the popover here.
-                Place content for the popover here.
+                {searchTerm}
               </PopoverContent>
             </Popover>
           </div>
         </CustomInput>
-
-
-
       </div>
-      <Button className="mr-4 ml-6" onClick={toggleTheme}>{theme ? `${formatTheme(theme)} mode` : "Theme"} </Button>
+
+        <BsCart4 className="h-10 items-center rounded-md border bg-background py-1 px-2 w-10 hover:cursor-pointer"/>
+      <Menubar>
+        <MenubarMenu>
+          <MenubarTrigger className="hover:cursor-pointer">Options</MenubarTrigger>
+          <MenubarContent>
+            <MenubarItem onClick={toggleTheme}> Light / Dark</MenubarItem>
+            <MenubarItem>New Window</MenubarItem>
+            <MenubarSeparator />
+            <MenubarItem>Share</MenubarItem>
+            <MenubarSeparator />
+            <MenubarItem>Print</MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
+      </Menubar>
+      <Button className="mr-2  w-24" onClick={toggleTheme}>{theme ? `${formatTheme(theme)} mode` : "Theme"} </Button>
     </div >
   )
 }

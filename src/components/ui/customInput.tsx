@@ -11,6 +11,11 @@ export interface InputProps
 
 const CustomInput = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, children, ...props }, ref) => {
+    const _handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+        console.log((e.target as HTMLInputElement).value);
+    }
+  }
     return (
       <div className="relative top-0 left-0">
         <div
@@ -20,6 +25,7 @@ const CustomInput = React.forwardRef<HTMLInputElement, InputProps>(
           )}>
           <FaMagnifyingGlass className="self-center mr-2"/>
           <input
+            onKeyDown={_handleKeyDown}
             className="w-full bg-transparent outline-none"
             type={type}
             ref={ref}
