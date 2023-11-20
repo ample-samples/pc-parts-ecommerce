@@ -42,17 +42,11 @@ export function NavMenu() {
                         <p className="text-bold text-xl"> Memory </p>
                       </NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>
-                        Desktop Memory
-                      </NavigationMenuLink>
+                      <NavigationMenuLink> Desktop Memory </NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>
-                        Laptop Memory
-                      </NavigationMenuLink>
+                      <NavigationMenuLink> Laptop Memory </NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>
-                        Server Memory
-                      </NavigationMenuLink>
+                      <NavigationMenuLink> Server Memory </NavigationMenuLink>
                       <br />
                     </Card>
 
@@ -63,17 +57,11 @@ export function NavMenu() {
                         </p>
                       </NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>
-                        AMD Radeon Graphics Cards
-                      </NavigationMenuLink>
+                      <NavigationMenuLink> AMD Radeon Graphics Cards </NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>
-                        NVIDIA Graphics Cards
-                      </NavigationMenuLink>
+                      <NavigationMenuLink> NVIDIA Graphics Cards </NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>
-                        Intel Graphics Cards
-                      </NavigationMenuLink>
+                      <NavigationMenuLink> Intel Graphics Cards </NavigationMenuLink>
                       <br />
                     </Card>
 
@@ -82,79 +70,48 @@ export function NavMenu() {
                         <p className="text-bold text-xl"> Motherboards </p>
                       </NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>
-                        AMD Motherboards
-                      </NavigationMenuLink>
+                      <NavigationMenuLink> AMD Motherboards </NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>
-                        Intel Motherboards
-                      </NavigationMenuLink>
+                      <NavigationMenuLink> Intel Motherboards </NavigationMenuLink>
                       <br />
                     </Card>
                     <Card className="p-2 flex-1">
                       <NavigationMenuLink>
-                        <p className="text-bold text-xl">
-                          Processors
-                        </p>
+                        <p className="text-bold text-xl"> Processors </p>
                       </NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>
-                        AMD Processors
+                      <NavigationMenuLink> AMD Processors </NavigationMenuLink>
+                      <br />
+                      <NavigationMenuLink> Intel Processors </NavigationMenuLink>
+                      <br />
+                    </Card>
+
+                    <Card className="p-2 flex-1">
+                      <NavigationMenuLink> <p className="text-bold text-xl"> Power Supplies </p>
                       </NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>
-                        Intel Processors
-                      </NavigationMenuLink>
+                      <NavigationMenuLink> All PSUs </NavigationMenuLink>
+                      <br />
+                      <NavigationMenuLink> Fully Modular </NavigationMenuLink>
+                      <br />
+                      <NavigationMenuLink> Semi Modular </NavigationMenuLink>
+                      <br />
+                      <NavigationMenuLink> 300W - 400W PSUs </NavigationMenuLink>
+                      <br />
+                      <NavigationMenuLink> 601W - 750W PSUs </NavigationMenuLink>
+                      <br />
+                      <NavigationMenuLink> 751W - 900W PSUs </NavigationMenuLink>
+                      <br />
+                      <NavigationMenuLink> 900W + PSUs </NavigationMenuLink>
                       <br />
                     </Card>
 
                     <Card className="p-2 flex-1">
                       <NavigationMenuLink>
-                        <p className="text-bold text-xl">
-                          Power Supplies
-                        </p>
+                        <p className="text-bold text-xl"> PC Bundles </p>
                       </NavigationMenuLink>
                       <br />
-                      <NavigationMenuLink>
-                        All PSUs
-                      </NavigationMenuLink>
-                      <br />
-                      <NavigationMenuLink>
-                        Fully Modular
-                      </NavigationMenuLink>
-                      <br />
-                      <NavigationMenuLink>
-                        Semi Modular
-                      </NavigationMenuLink>
-                      <br />
-                      <NavigationMenuLink>
-                        300W - 400W PSUs
-                      </NavigationMenuLink>
-                      <br />
-                      <NavigationMenuLink>
-                        601W - 750W PSUs
-                      </NavigationMenuLink>
-                      <br />
-                      <NavigationMenuLink>
-                        751W - 900W PSUs
-                      </NavigationMenuLink>
-                      <br />
-                      <NavigationMenuLink>
-                        900W + PSUs
-                      </NavigationMenuLink>
-                      <br />
-                    </Card>
-
-                    <Card className="p-2 flex-1">
-                      <NavigationMenuLink>
-                        <p className="text-bold text-xl">
-                          PC Bundles
-                        </p>
-                      </NavigationMenuLink>
-                      <br />
-                      <NavigationMenuLink>
-                        Custom PC Bundles
-                      </NavigationMenuLink>
+                      <NavigationMenuLink> Custom PC Bundles </NavigationMenuLink>
                       <br />
                     </Card>
 
@@ -164,7 +121,7 @@ export function NavMenu() {
             </NavigationMenuList>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Diplay</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Displays</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="h-80 w-[450px] p-2 flex flex-col flex-wrap gap-2">
                     <Card className="p-2 flex-1">
@@ -242,7 +199,7 @@ export function NavMenu() {
             </MenubarContent>
           </MenubarMenu>
         </Menubar>
-        <div className="grow" />
+        <div className="grow text-center place-self-center" >Search bar?</div>
         <Button className="mr-4" onClick={toggleTheme}>{theme ? `${formatTheme(theme)} mode` : "Theme"} </Button>
       </div >
     </>
