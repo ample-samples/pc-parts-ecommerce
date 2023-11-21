@@ -24,38 +24,41 @@ import webcam from '../../../data/json/webcam.json'
 import wirednetworkcard from '../../../data/json/wired-network-card.json'
 import wirelessnetworkcard from '../../../data/json/wireless-network-card.json'
 
-export function allData(category?: string) {
-	const allData = {
-		// caseaccessory,
-		cases,
-		casefan,
-		cpucooler,
-		cpu,
-		externalharddrive,
-		fancontroller,
-		headphones,
-		internalharddrive,
-		keyboard,
-		memory,
-		monitor,
-		motherboard,
-		mouse,
-		opticaldrive,
-		os,
-		powersupply,
-		soundcard,
-		speakers,
-		thermalpaste,
-		ups,
-		videocard,
-		webcam,
-		wirednetworkcard,
-		wirelessnetworkcard,
-	}
+const categories = {
+	// caseaccessory,
+	cases,
+	casefan,
+	cpucooler,
+	cpu,
+	externalharddrive,
+	fancontroller,
+	headphones,
+	internalharddrive,
+	keyboard,
+	memory,
+	monitor,
+	motherboard,
+	mouse,
+	opticaldrive,
+	os,
+	powersupply,
+	soundcard,
+	speakers,
+	thermalpaste,
+	ups,
+	videocard,
+	webcam,
+	wirednetworkcard,
+	wirelessnetworkcard,
+}
+
+
+
+function allData(category?: string) {
 	if (category) {
-		return JSON.stringify(allData[category])
+		return JSON.stringify(categories[category])
 	} else {
-		return JSON.stringify([allData]);
+		return JSON.stringify([categories]);
 	}
 }
 
