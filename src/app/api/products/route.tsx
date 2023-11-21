@@ -52,9 +52,9 @@ const categories = {
 	wirelessnetworkcard,
 }
 
+type Category = keyof typeof categories
 
-
-function allData(category?: string) {
+function allData(category?: Category | undefined) {
 	if (category) {
 		return JSON.stringify(categories[category])
 	} else {
