@@ -6,13 +6,18 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
 
+model Products {
+  id          Int    @id @default(autoincrement())
+  category    String
+  productList String
 }
 
 model Token {
-  id       Int      @id @default(autoincrement())
-  tokenString    String
+  id          Int    @id @default(autoincrement())
+  tokenString String
 }

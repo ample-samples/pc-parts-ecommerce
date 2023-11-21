@@ -6,28 +6,22 @@ import energyDrinks from "@/assets/energy_drinks.jpeg"
 import gamerJuiceLogo from "@/assets/gamer_juice.svg"
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarShortcut, MenubarTrigger } from '@/components/ui/menubar'
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuViewport } from '@/components/ui/navigation-menu'
-import { Popover, PopoverContent, PopoverTrigger, } from "@/components/ui/popover"
 
-import { CustomInput } from '@/components/ui/customInput'
+import { SearchBar } from '@/components/searchBar'
+import { ThemeButton } from '@/components/themeButton'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import { BsCart4 } from "react-icons/bs";
+import { CgProfile } from "react-icons/cg";
+
 
 import { useState } from 'react'
 
 export function NavMenu() {
-  const [searchTerm, setSearchTerm] = useState("");
   const { theme, setTheme } = useTheme();
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
-  const formatTheme = (theme: string) => {
-    return theme.charAt(0).toUpperCase() + theme.slice(1);
-  };
 
   return (
     <div className="w-full py-2 px-2 flex flex-col-4 gap-4 space-between items-center">
@@ -200,28 +194,17 @@ export function NavMenu() {
       </Menubar>
 
       <div className="grow text-center place-self-center relative" >
-        <CustomInput className="w-full" onSubmit={(e) => console.log(e.target, "awdhjk")} onChange={(e) => {
-          console.log(e.target.value)
-          setSearchTerm(e.target.value)
-        }} placeholder="Search" >
-          <div className="absolute w-full">
-            <Popover open={searchTerm.length > 0}>
-              <PopoverTrigger>
-              </PopoverTrigger>
-              <PopoverContent className="w-[702px] max-h-[200px] overflow-hidden" onOpenAutoFocus={(e) => e.preventDefault()}>
-                {searchTerm}
-              </PopoverContent>
-            </Popover>
-          </div>
-        </CustomInput>
+        <SearchBar />
       </div>
 
-        <BsCart4 className="h-10 items-center rounded-md border bg-background py-1 px-2 w-10 hover:cursor-pointer"/>
+      <BsCart4 className="h-10 w-10 items-center rounded-md border py-1 px-2 hover:cursor-pointer" />
+
       <Menubar>
-        <MenubarMenu>
-          <MenubarTrigger className="hover:cursor-pointer">Options</MenubarTrigger>
+        <MenubarMenu >
+          <MenubarTrigger className="p-1">
+            <CgProfile className="w-6 h-6 items-center" />
+          </MenubarTrigger>
           <MenubarContent>
-            <MenubarItem onClick={toggleTheme}> Light / Dark</MenubarItem>
             <MenubarItem>New Window</MenubarItem>
             <MenubarSeparator />
             <MenubarItem>Share</MenubarItem>
@@ -230,7 +213,7 @@ export function NavMenu() {
           </MenubarContent>
         </MenubarMenu>
       </Menubar>
-      <Button className="mr-2  w-24" onClick={toggleTheme}>{theme ? `${formatTheme(theme)} mode` : "Theme"} </Button>
+      <ThemeButton />
     </div >
   )
 }
