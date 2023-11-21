@@ -54,7 +54,7 @@ const categories = {
 
 type Category = keyof typeof categories
 
-function allData(category?: Category | undefined) {
+function allData(category?: Category | null) {
 	if (category) {
 		return JSON.stringify(categories[category])
 	} else {
@@ -64,5 +64,7 @@ function allData(category?: Category | undefined) {
 
 export async function GET(request: NextRequest) {
 	console.log(request.nextUrl.searchParams)
-	return new Response(request.nextUrl.searchParams.get('category') ? allData(request.nextUrl.searchParams.get('category')) : allData())
+
+
+	return new Response(request.nextUrl.searchParams.get('category') ? allData(request.nextUrl.searchParams.get('category') as Category) : allData())
 }
